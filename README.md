@@ -1,50 +1,46 @@
 # Terraform AWS VPC Project
 
-This is a Terraform project that provisions a complete Virtual Private Cloud (VPC) setup in AWS.  
-It automates the creation of subnets, route tables, internet gateway, and more — saving time and reducing manual errors.
+This project uses **Terraform** to automate the provisioning of a complete **VPC (Virtual Private Cloud)** setup in **AWS**.  
+It includes the creation of subnets, route tables, internet gateways, and more — making AWS infrastructure setup easier and repeatable.
 
 ---
 
-## 🚀 Features
+## 🧰 Features
 
-- Creates a fully functional VPC in AWS
-- Includes public and private subnets
-- Adds internet gateway and route tables
-- Optionally configures NAT gateway
-- Reusable and modular Terraform structure
-
----
-
-## 🛠️ Requirements
-
-- [Terraform](https://www.terraform.io/downloads) installed
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed and configured
-- An AWS account with access keys
+- Create a custom VPC
+- Public and private subnets
+- Internet Gateway and NAT Gateway
+- Route tables and associations
+- Modular and reusable Terraform structure
 
 ---
 
-## 📦 Installation
+## ⚙️ Prerequisites
 
-### 1. Clone the repository
+- An AWS account
+- AWS IAM user with sufficient permissions
+- [Terraform installed](https://www.terraform.io/downloads)
+- [AWS CLI installed and configured](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/chetan2624/Terraform-module-project-.git
+
 cd Terraform-module-project-
 2. Install Terraform
-If you don’t already have Terraform installed, download it from:
+If you haven’t already installed Terraform, download it from:
 👉 https://www.terraform.io/downloads
 
-Follow installation steps according to your operating system.
-
-3. Install and configure AWS CLI
-If you haven’t already set up the AWS CLI, download it from:
+3. Install and Configure AWS CLI
+If AWS CLI is not installed, download it from:
 👉 https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
-Then configure it with your credentials:
-
-bash
-Copy
-Edit
+Then configure it:
 aws configure
 You’ll be prompted to enter:
 
@@ -54,49 +50,41 @@ AWS Secret Access Key
 
 Default region name (e.g. us-east-1)
 
-Default output format (you can press Enter)
+Default output format (e.g. json)
 
-⚙️ Usage
+🚀 Running the Project
 1. Initialize Terraform
-bash
-Copy
-Edit
 terraform init
-This prepares your working directory by downloading required providers and setting up your backend.
 
-2. Preview the changes
-bash
-Copy
-Edit
+This sets up the backend and downloads required providers.
+
+2. Preview Infrastructure Plan
 terraform plan
-This command shows you what Terraform will do before actually making any changes.
+This shows the resources Terraform will create without making changes.
 
-3. Apply the configuration
-bash
-Copy
-Edit
+3. Apply the Configuration
 terraform apply
-Terraform will show you the planned changes again.
-Type yes when prompted to confirm and apply the configuration.
+Type yes when prompted to proceed.
 
-✅ What This Deploys
+✅ Result
+Once applied, Terraform will create:
+
 A custom VPC
 
-Multiple public and private subnets
+Public and private subnets
 
-Route tables and their associations
+Internet Gateway
 
-An Internet Gateway
+Route Tables and associations
 
-A NAT Gateway (if required)
+Optional NAT Gateway
 
-All required networking components wired together
+All configured to work together in your AWS account.
 
-📌 Notes
-Make sure your AWS user has permission to create VPC and networking resources.
+📎 Notes
+Make sure your AWS credentials are correct and active.
 
-This project is intended as a base setup — you can extend it to include EC2, RDS, or other services.
+You can customize the variables in the .tf files for your needs.
 
-🙋‍♂️ Support
-If you face any issues, feel free to open an issue in the repository.
-
+Don’t forget to destroy your infrastructure if you no longer need it
+terraform destroy
