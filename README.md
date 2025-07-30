@@ -1,90 +1,97 @@
 # Terraform AWS VPC Project
 
-This project uses **Terraform** to automate the provisioning of a complete **VPC (Virtual Private Cloud)** setup in **AWS**.  
-It includes the creation of subnets, route tables, internet gateways, and more — making AWS infrastructure setup easier and repeatable.
+A simple Terraform module project that provisions a VPC (Virtual Private Cloud) in your AWS account. This is ideal for learning how to work with Terraform modules and AWS infrastructure.
 
 ---
 
-## 🧰 Features
+## 🚀 Installation
 
-- Create a custom VPC
-- Public and private subnets
-- Internet Gateway and NAT Gateway
-- Route tables and associations
-- Modular and reusable Terraform structure
-
----
-
-## ⚙️ Prerequisites
-
-- An AWS account
-- AWS IAM user with sufficient permissions
-- [Terraform installed](https://www.terraform.io/downloads)
-- [AWS CLI installed and configured](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-
----
-
-## 🛠️ Installation & Setup
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/chetan2624/Terraform-module-project-.git
-
 cd Terraform-module-project-
-2. Install Terraform
-If you haven’t already installed Terraform, download it from:
-👉 https://www.terraform.io/downloads
+```
 
-3. Install and Configure AWS CLI
-If AWS CLI is not installed, download it from:
-👉 https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+---
 
-Then configure it:
+### 2. Install Terraform
+
+If you don't already have Terraform installed, download it from:
+
+👉 [https://www.terraform.io/downloads](https://www.terraform.io/downloads)
+
+Follow the installation guide based on your operating system.
+
+---
+
+### 3. Install and configure AWS CLI
+
+If you haven't installed the AWS CLI yet, download it from:
+
+👉 [https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+
+Then configure it with your credentials:
+
+```bash
 aws configure
-You’ll be prompted to enter:
+```
 
-AWS Access Key ID
+You'll be prompted to enter:
 
-AWS Secret Access Key
+- AWS Access Key ID  
+- AWS Secret Access Key  
+- Default region name  
+- Default output format (you can press Enter to use default)
 
-Default region name (e.g. us-east-1)
+---
 
-Default output format (e.g. json)
+## ⚙️ Usage
 
-🚀 Running the Project
-1. Initialize Terraform
+### 1. Initialize Terraform
+
+```bash
 terraform init
+```
 
-This sets up the backend and downloads required providers.
+This command initializes the working directory, downloads providers, and prepares the environment.
 
-2. Preview Infrastructure Plan
+---
+
+### 2. Preview the execution plan
+
+```bash
 terraform plan
-This shows the resources Terraform will create without making changes.
+```
 
-3. Apply the Configuration
+This command shows what Terraform will do before making any actual changes.
+
+---
+
+### 3. Apply the configuration
+
+```bash
 terraform apply
-Type yes when prompted to proceed.
+```
 
-✅ Result
-Once applied, Terraform will create:
+This command applies the Terraform configuration and provisions the resources.
 
-A custom VPC
+---
 
-Public and private subnets
+## 📦 What Gets Created?
 
-Internet Gateway
+After running the above commands successfully, the following resources will be created in your AWS account:
 
-Route Tables and associations
+- A custom VPC
+- Public and/or private subnets
+- Internet Gateway
+- Route Tables
+- Other VPC-related networking components (based on your modules)
 
-Optional NAT Gateway
+---
 
-All configured to work together in your AWS account.
+## 🙌 Acknowledgements
 
-📎 Notes
-Make sure your AWS credentials are correct and active.
-
-You can customize the variables in the .tf files for your needs.
-
-Don’t forget to destroy your infrastructure if you no longer need it
-terraform destroy
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+- [AWS VPC Docs](https://docs.aws.amazon.com/vpc/)
+- [Awesome README Templates](https://github.com/elangosundar/awesome-README-templates)
