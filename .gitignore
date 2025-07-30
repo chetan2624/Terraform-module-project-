@@ -8,8 +8,7 @@
 # Crash log files
 crash.log
 
-# Exclude variable override files
-*.tfvars
+
 
 # Exclude sensitive files
 *.tfvars.json
