@@ -1,104 +1,102 @@
 # Terraform AWS VPC Project
 
-This is a simple Terraform project that creates a Virtual Private Cloud (VPC) in AWS.  
-It helps you automatically set up a networking environment with subnets, route tables, and internet gateway — so you don’t have to do it manually from the AWS console.
+This is a Terraform project that provisions a complete Virtual Private Cloud (VPC) setup in AWS.  
+It automates the creation of subnets, route tables, internet gateway, and more — saving time and reducing manual errors.
 
 ---
 
-## Steps to Run This Project on Your System
+## 🚀 Features
 
-### 1. Clone the Repository
+- Creates a fully functional VPC in AWS
+- Includes public and private subnets
+- Adds internet gateway and route tables
+- Optionally configures NAT gateway
+- Reusable and modular Terraform structure
 
-First, you need to clone this project to your local machine using the command below:
+---
 
+## 🛠️ Requirements
+
+- [Terraform](https://www.terraform.io/downloads) installed
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installed and configured
+- An AWS account with access keys
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/chetan2624/Terraform-module-project-.git
-
-
-Then go inside the project directory:
-
--> cd Terraform-module-project-
-
----
-
-### 2. Install Terraform
-
-This project requires Terraform to run.
-
-You can download Terraform from the official website:  
+cd Terraform-module-project-
+2. Install Terraform
+If you don’t already have Terraform installed, download it from:
 👉 https://www.terraform.io/downloads
 
-Follow the installation steps provided there based on your operating system.
+Follow installation steps according to your operating system.
 
----
-
-### 3. Install and Configure AWS CLI
-
-Terraform uses your AWS credentials to create resources.  
-To provide credentials, we use the AWS CLI.
-
-Download the AWS CLI from this link:  
+3. Install and configure AWS CLI
+If you haven’t already set up the AWS CLI, download it from:
 👉 https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
-After installing, run the following command to configure it:
+Then configure it with your credentials:
 
--> aws configure
+bash
+Copy
+Edit
+aws configure
+You’ll be prompted to enter:
 
-You will be asked to enter the following:
+AWS Access Key ID
 
-- AWS Access Key ID  
-- AWS Secret Access Key  
-- Default region name (example: `us-east-1`)  
-- Default output format (you can press Enter to skip or use `json`)
+AWS Secret Access Key
 
----
+Default region name (e.g. us-east-1)
 
-### 4. Initialize the Terraform Project
+Default output format (you can press Enter)
 
-To prepare the Terraform environment, run the following command:
+⚙️ Usage
+1. Initialize Terraform
+bash
+Copy
+Edit
+terraform init
+This prepares your working directory by downloading required providers and setting up your backend.
 
--> terraform init
+2. Preview the changes
+bash
+Copy
+Edit
+terraform plan
+This command shows you what Terraform will do before actually making any changes.
 
-This will download all required provider plugins and set up the project.
+3. Apply the configuration
+bash
+Copy
+Edit
+terraform apply
+Terraform will show you the planned changes again.
+Type yes when prompted to confirm and apply the configuration.
 
----
+✅ What This Deploys
+A custom VPC
 
-### 5. Preview the Resources
+Multiple public and private subnets
 
-Before applying the configuration, you can see what will be created by running:
+Route tables and their associations
 
--> terraform plan
+An Internet Gateway
 
+A NAT Gateway (if required)
 
-This shows a detailed list of the AWS resources Terraform will create or update.
+All required networking components wired together
 
----
+📌 Notes
+Make sure your AWS user has permission to create VPC and networking resources.
 
-### 6. Apply the Configuration
+This project is intended as a base setup — you can extend it to include EC2, RDS, or other services.
 
-To actually create the VPC and related resources, run:
-
--> terraform apply
-
-
-Terraform will ask for confirmation.  
-Type `yes` and press Enter to proceed.
-
----
-
-## What This Will Create in AWS
-
-- A new **Virtual Private Cloud (VPC)**
-- Multiple **public and private subnets**
-- A configured **internet gateway** to allow internet access
-- A **NAT gateway** (if enabled) to allow internet access from private subnets
-- Proper **route tables** associated with the subnets
-
----
-
-✅ After following these steps, you will have a fully working VPC setup in your AWS account, ready to deploy EC2 instances or other cloud resources inside it.
-
-
-
-
-
+🙋‍♂️ Support
+If you face any issues, feel free to open an issue in the repository.
 
